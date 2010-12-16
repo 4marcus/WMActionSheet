@@ -20,6 +20,7 @@ Usage
 -----
 
 WMActionSheetAppDelegate.m shows how to use the WMActionSheet.
-* Copy `WMActionSheet.h`, `WMActionSheet.m`, `UIImage+tinted.h` and `UIIamge+tinted.m` to your project. 
+
+* Copy `WMActionSheet.h`, `WMActionSheet.m`, `UIImage+tinted.h` and `UIIamge+tinted.m` to your project.
 * Add the `wmdefaultbutton.png` and `wmdefaultbutton@2x.png` files as Resources.
 * Add QuartzCore framework to your project's frameworks.
