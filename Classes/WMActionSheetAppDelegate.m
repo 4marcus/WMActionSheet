@@ -60,7 +60,7 @@
 # pragma mark ShowCase Implementing the delegate
 
 // the action sheet delegate method
-- (void) actionSheet: (id <NSObject>) wmactionsheet triggeredButtonWithId: (NSInteger) buttonId {
+- (void) actionSheet: (WMActionSheet*) theActionSheet triggeredButtonWithId: (NSInteger) buttonId {
 	UILabel* info = (UILabel*)[self.view viewWithTag:11];
 	NSString* buttonInfo;
 	switch (buttonId) {

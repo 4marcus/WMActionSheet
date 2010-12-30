@@ -17,13 +17,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@protocol WMActionSheetDelegate <NSObject>
-
-- (void) actionSheet: (id <NSObject>) wmactionsheet triggeredButtonWithId: (NSInteger) buttonId;
-
-@end
-
-
+@protocol WMActionSheetDelegate;
 
 @interface WMActionSheet : UIView {
 	
@@ -47,5 +41,11 @@
 // dismiss the action sheet. Will NOT trigger any delegate message.
 - (void) dismissWithAnimation: (BOOL) animated;
 
+
+@end
+
+@protocol WMActionSheetDelegate
+
+- (void) actionSheet: (WMActionSheet*) theActionSheet triggeredButtonWithId: (NSInteger) buttonId;
 
 @end
