@@ -27,7 +27,6 @@
 	CALayer* coverLayer;
 	UIView* sheetView;
 	CGFloat currentYOffset;
-	NSInteger triggeredButtonTag;
 }
 // create an action sheet
 - (id)initWithTitle:(NSString *) aTitle delegate:(id <WMActionSheetDelegate >) aDelegate;

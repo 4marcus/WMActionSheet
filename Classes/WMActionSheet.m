@@ -119,8 +119,7 @@
 	}
 
 	// register events
-	[newButton addTarget:self action:@selector(registerButtonAction) forControlEvents:UIControlEventTouchDown];
-	[newButton addTarget:self action:@selector(processButtonAction) forControlEvents:UIControlEventTouchUpInside];
+	[newButton addTarget:self action:@selector(processButtonAction:) forControlEvents:UIControlEventTouchUpInside];
 	
 	// set title
 	[newButton setTitle: buttonTitle forState:UIControlStateNormal];
@@ -140,20 +139,9 @@
 
 # pragma mark -
 # pragma mark processing
-- (void) registerButtonAction {
-	// check which button is highlighted.
-	for (UIView *aView in [self.sheetView subviews]) {
-		if ([aView respondsToSelector:@selector(isHighlighted)] && ((UIButton*) aView).highlighted) {
-			triggeredButtonTag = aView.tag;
-			return;
-		}
-	}
-}
-
-
-- (void) processButtonAction {
+- (void) processButtonAction: (id) sender {
 	// trigger action for highlighted button.
-	[self.delegate actionSheet:self triggeredButtonWithId:triggeredButtonTag];
+	[self.delegate actionSheet:self triggeredButtonWithId:[(UIView *) sender tag]];
 	[self dismissWithAnimation:YES];
 }
 
